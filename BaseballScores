@@ -1,0 +1,380 @@
+import java.util.Scanner;
+
+/**
+ * A simple BaseballScores class
+ *
+ * @author Samhitha Mupharaphu Purdue CS
+ * @version 09/27/2021
+ */
+public class BaseballScores {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome!");
+        System.out.println("Enter Team One Name:");
+        String teamOne = scanner.nextLine();
+        System.out.println("Enter Team Two Name:");
+        String teamTwo = scanner.nextLine();
+        System.out.println("Enter Inning Scores:");
+        String scores = scanner.nextLine();
+
+        scanner.close();
+
+        // The scores for each inning are calculated and stored in the variables below.
+        int currentScoreIndex = 0;
+        int teamOneInningOne = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+        currentScoreIndex += 3;
+        int teamTwoInningOne = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+
+        currentScoreIndex += 3;
+        int teamOneInningTwo = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+        currentScoreIndex += 3;
+        int teamTwoInningTwo = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+
+        currentScoreIndex += 3;
+        int teamOneInningThree = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+        currentScoreIndex += 3;
+        int teamTwoInningThree = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+
+        currentScoreIndex += 3;
+        int teamOneInningFour = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+        currentScoreIndex += 3;
+        int teamTwoInningFour = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+
+        currentScoreIndex += 3;
+        int teamOneInningFive = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+        currentScoreIndex += 3;
+        int teamTwoInningFive = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+
+        currentScoreIndex += 3;
+        int teamOneInningSix = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+        currentScoreIndex += 3;
+        int teamTwoInningSix = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+
+        currentScoreIndex += 3;
+        int teamOneInningSeven = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+        currentScoreIndex += 3;
+        int teamTwoInningSeven = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+
+        currentScoreIndex += 3;
+        int teamOneInningEight = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+        currentScoreIndex += 3;
+        int teamTwoInningEight = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+
+
+        currentScoreIndex += 3;
+        int teamOneInningNine = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+        currentScoreIndex += 3;
+        int teamTwoInningNine = Integer.parseInt(scores.substring(currentScoreIndex, currentScoreIndex + 2));
+
+        int teamOneTotalScoreOne = teamOneInningOne + teamOneInningTwo + teamOneInningThree;
+        int teamOneTotalScoreTwo = teamOneInningFour + teamOneInningFive + teamOneInningSix;
+        int teamOneTotalScoreThree = teamOneInningSeven + teamOneInningEight + teamOneInningNine;
+        int teamOneTotalScore = teamOneTotalScoreOne + teamOneTotalScoreTwo + teamOneTotalScoreThree;
+
+        int teamTwoTotalScoreOne = teamTwoInningOne + teamTwoInningTwo + teamTwoInningThree;
+        int teamTwoTotalScoreTwo = teamTwoInningFour + teamTwoInningFive + teamTwoInningSix;
+        int teamTwoTotalScoreThree = teamTwoInningSeven + teamTwoInningEight + teamTwoInningNine;
+        int teamTwoTotalScore = teamTwoTotalScoreOne + teamTwoTotalScoreTwo + teamTwoTotalScoreThree;
+
+        int difference;
+
+        if (teamOneTotalScore > teamTwoTotalScore) {
+            System.out.print("The winner is: " + teamOne + ", with a score differential of ");
+            difference = teamOneTotalScore - teamTwoTotalScore;
+            System.out.println(difference);
+
+        } else if (teamTwoTotalScore > teamOneTotalScore) {
+            System.out.print("The winner is: " + teamTwo + ", with a score differential of ");
+            difference = teamTwoTotalScore - teamOneTotalScore;
+            System.out.println(difference);
+        }
+
+        System.out.println(teamOne + " scored " + teamOneTotalScore + " points.");
+        System.out.println(teamTwo + " scored " + teamTwoTotalScore + " points.");
+
+        System.out.print(teamOne + " Game Log: ");
+        if (teamOneInningOne > teamTwoInningOne) {
+            System.out.print("W");
+        } else if (teamOneInningOne < teamTwoInningOne) {
+            System.out.print("L");
+        } else if (teamOneInningOne == teamTwoInningOne) {
+            System.out.print("T");
+        }
+
+        if (teamOneInningTwo > teamTwoInningTwo) {
+            System.out.print("-W");
+        } else if (teamOneInningTwo < teamTwoInningTwo) {
+            System.out.print("-L");
+        } else if (teamOneInningTwo == teamTwoInningTwo) {
+            System.out.print("-T");
+        }
+
+        if (teamOneInningThree > teamTwoInningThree) {
+            System.out.print("-W");
+        } else if (teamOneInningThree < teamTwoInningThree) {
+            System.out.print("-L");
+        } else if (teamOneInningThree == teamTwoInningThree) {
+            System.out.print("-T");
+        }
+
+        if (teamOneInningFour > teamTwoInningFour) {
+            System.out.print("-W");
+        } else if (teamOneInningFour < teamTwoInningFour) {
+            System.out.print("-L");
+        } else if (teamOneInningFour == teamTwoInningFour) {
+            System.out.print("-T");
+        }
+
+        if (teamOneInningFive > teamTwoInningFive) {
+            System.out.print("-W");
+        } else if (teamOneInningFive < teamTwoInningFive) {
+            System.out.print("-L");
+        } else if (teamOneInningFive == teamTwoInningFive) {
+            System.out.print("-T");
+        }
+
+        if (teamOneInningSix > teamTwoInningSix) {
+            System.out.print("-W");
+        } else if (teamOneInningSix < teamTwoInningSix) {
+            System.out.print("-L");
+        } else if (teamOneInningSix == teamTwoInningSix) {
+            System.out.print("-T");
+        }
+
+        if (teamOneInningSeven > teamTwoInningSeven) {
+            System.out.print("-W");
+        } else if (teamOneInningSeven < teamTwoInningSeven) {
+            System.out.print("-L");
+        } else if (teamOneInningSeven == teamTwoInningSeven) {
+            System.out.print("-T");
+        }
+
+        if (teamOneInningEight > teamTwoInningEight) {
+            System.out.print("-W");
+        } else if (teamOneInningEight < teamTwoInningEight) {
+            System.out.print("-L");
+        } else if (teamOneInningEight == teamTwoInningEight) {
+            System.out.print("-T");
+        }
+
+        if (teamOneInningNine > teamTwoInningNine) {
+            System.out.print("-W\n");
+        } else if (teamOneInningNine < teamTwoInningNine) {
+            System.out.print("-L\n");
+        } else if (teamOneInningNine == teamTwoInningNine) {
+            System.out.print("-T\n");
+        }
+
+        System.out.print(teamTwo + " Game Log: ");
+        if (teamTwoInningOne > teamOneInningOne) {
+            System.out.print("W");
+        } else if (teamTwoInningOne < teamOneInningOne) {
+            System.out.print("L");
+        } else if (teamTwoInningOne == teamOneInningOne) {
+            System.out.print("T");
+        }
+
+        if (teamTwoInningTwo > teamOneInningTwo) {
+            System.out.print("-W");
+        } else if (teamTwoInningTwo < teamOneInningTwo) {
+            System.out.print("-L");
+        } else if (teamTwoInningTwo == teamOneInningTwo) {
+            System.out.print("-T");
+        }
+
+        if (teamTwoInningThree > teamOneInningThree) {
+            System.out.print("-W");
+        } else if (teamTwoInningThree < teamOneInningThree) {
+            System.out.print("-L");
+        } else if (teamTwoInningThree == teamOneInningThree) {
+            System.out.print("-T");
+        }
+
+        if (teamTwoInningFour > teamOneInningFour) {
+            System.out.print("-W");
+        } else if (teamTwoInningFour < teamOneInningFour) {
+            System.out.print("-L");
+        } else if (teamTwoInningFour == teamOneInningFour) {
+            System.out.print("-T");
+        }
+
+        if (teamTwoInningFive > teamOneInningFive) {
+            System.out.print("-W");
+        } else if (teamTwoInningFive < teamOneInningFive) {
+            System.out.print("-L");
+        } else if (teamTwoInningFive == teamOneInningFive) {
+            System.out.print("-T");
+        }
+
+        if (teamTwoInningSix > teamOneInningSix) {
+            System.out.print("-W");
+        } else if (teamTwoInningSix < teamOneInningSix) {
+            System.out.print("-L");
+        } else if (teamTwoInningSix == teamOneInningSix) {
+            System.out.print("-T");
+        }
+
+        if (teamTwoInningSeven > teamOneInningSeven) {
+            System.out.print("-W");
+        } else if (teamTwoInningSeven < teamOneInningSeven) {
+            System.out.print("-L");
+        } else if (teamTwoInningSeven == teamOneInningSeven) {
+            System.out.print("-T");
+        }
+
+        if (teamTwoInningEight > teamOneInningEight) {
+            System.out.print("-W");
+        } else if (teamTwoInningEight < teamOneInningEight) {
+            System.out.print("-L");
+        } else if (teamTwoInningEight == teamOneInningEight) {
+            System.out.print("-T");
+        }
+
+        if (teamTwoInningNine > teamOneInningNine) {
+            System.out.print("-W\n");
+        } else if (teamTwoInningNine < teamOneInningNine) {
+            System.out.print("-L\n");
+        } else if (teamTwoInningNine == teamOneInningNine) {
+            System.out.print("-T\n");
+        }
+
+        int inningDifferenceOneTeamOne = teamOneInningOne - teamTwoInningOne;
+        int perfectInningsOneOne = 0;
+
+        if (teamTwoInningOne == 0 && inningDifferenceOneTeamOne >= 1) {
+            perfectInningsOneOne += 1;
+        }
+
+        int inningDifferenceTwoTeamOne = teamOneInningTwo - teamTwoInningTwo;
+        int perfectInningsOneTwo = 0;
+
+        if (teamTwoInningTwo == 0 && inningDifferenceTwoTeamOne >= 1) {
+            perfectInningsOneTwo += 1;
+        }
+
+        int inningDifferenceThreeTeamOne = teamOneInningThree - teamTwoInningThree;
+        int perfectInningsOneThree = 0;
+
+        if (teamTwoInningThree == 0 && inningDifferenceThreeTeamOne >= 1) {
+            perfectInningsOneThree += 1;
+        }
+
+        int inningDifferenceFourTeamOne = teamOneInningFour - teamTwoInningFour;
+        int perfectInningsOneFour = 0;
+
+        if (teamTwoInningFour == 0 && inningDifferenceFourTeamOne >= 1) {
+            perfectInningsOneFour += 1;
+        }
+
+        int inningDifferenceFiveTeamOne = teamOneInningFive - teamTwoInningFive;
+        int perfectInningsOneFive = 0;
+
+        if (teamTwoInningFive == 0 && inningDifferenceFiveTeamOne >= 1) {
+            perfectInningsOneFive += 1;
+        }
+
+        int inningDifferenceSixTeamOne = teamOneInningSix - teamTwoInningSix;
+        int perfectInningsOneSix = 0;
+
+        if (teamTwoInningSix == 0 && inningDifferenceSixTeamOne >= 1) {
+            perfectInningsOneSix += 1;
+        }
+
+        int inningDifferenceSevenTeamOne = teamOneInningSeven - teamTwoInningSeven;
+        int perfectInningsOneSeven = 0;
+
+        if (teamTwoInningSeven == 0 && inningDifferenceSevenTeamOne >= 1) {
+            perfectInningsOneSeven += 1;
+        }
+
+        int inningDifferenceEightTeamOne = teamOneInningEight - teamTwoInningEight;
+        int perfectInningsOneEight = 0;
+
+        if (teamTwoInningEight == 0 && inningDifferenceEightTeamOne >= 1) {
+            perfectInningsOneEight += 1;
+        }
+
+        int inningDifferenceNineTeamOne = teamOneInningNine - teamTwoInningNine;
+        int perfectInningsOneNine = 0;
+
+        if (teamTwoInningNine == 0 && inningDifferenceNineTeamOne >= 1) {
+            perfectInningsOneNine += 1;
+        }
+
+        int perfectInningsTotalOneO = perfectInningsOneOne + perfectInningsOneTwo + perfectInningsOneThree;
+        int perfectInningsTotalOneT = perfectInningsOneFour + perfectInningsOneFive + perfectInningsOneSix;
+        int perfectInningsTotalOneTh = perfectInningsOneSeven + perfectInningsOneEight + perfectInningsOneNine;
+        int perfectInningsTotalOne = perfectInningsTotalOneO + perfectInningsTotalOneT + perfectInningsTotalOneTh;
+
+        System.out.print(teamOne + " Perfect Innings: " + perfectInningsTotalOne + "\n");
+
+        int inningDifferenceOneTeamTwo = teamTwoInningOne - teamOneInningOne;
+        int perfectInningsTwoOne = 0;
+
+        if (teamOneInningOne == 0 && inningDifferenceOneTeamTwo >= 1) {
+            perfectInningsTwoOne += 1;
+        }
+
+        int inningDifferenceTwoTeamTwo = teamTwoInningTwo - teamOneInningTwo;
+        int perfectInningsTwoTwo = 0;
+
+        if (teamOneInningTwo == 0 && inningDifferenceTwoTeamTwo >= 1) {
+            perfectInningsTwoTwo += 1;
+        }
+
+        int inningDifferenceThreeTeamTwo = teamTwoInningThree - teamOneInningThree;
+        int perfectInningsTwoThree = 0;
+
+        if (teamOneInningThree == 0 && inningDifferenceThreeTeamTwo >= 1) {
+            perfectInningsTwoThree += 1;
+        }
+
+        int inningDifferenceFourTeamTwo = teamTwoInningFour - teamOneInningFour;
+        int perfectInningsTwoFour = 0;
+
+        if (teamOneInningFour == 0 && inningDifferenceFourTeamTwo >= 1) {
+            perfectInningsTwoFour += 1;
+        }
+
+        int inningDifferenceFiveTeamTwo = teamTwoInningFive - teamOneInningFive;
+        int perfectInningsTwoFive = 0;
+
+        if (teamOneInningFive == 0 && inningDifferenceFiveTeamTwo >= 1) {
+            perfectInningsTwoFive += 1;
+        }
+
+        int inningDifferenceSixTeamTwo = teamTwoInningSix - teamOneInningSix;
+        int perfectInningsTwoSix = 0;
+
+        if (teamOneInningSix == 0 && inningDifferenceSixTeamTwo >= 1) {
+            perfectInningsTwoSix += 1;
+        }
+
+        int inningDifferenceSevenTeamTwo = teamTwoInningSeven - teamOneInningSeven;
+        int perfectInningsTwoSeven = 0;
+
+        if (teamOneInningSeven == 0 && inningDifferenceSevenTeamTwo >= 1) {
+            perfectInningsTwoSeven += 1;
+        }
+
+        int inningDifferenceEightTeamTwo = teamTwoInningEight - teamOneInningEight;
+        int perfectInningsTwoEight = 0;
+
+        if (teamOneInningEight == 0 && inningDifferenceEightTeamTwo >= 1) {
+            perfectInningsTwoEight += 1;
+        }
+
+        int inningDifferenceNineTeamTwo = teamTwoInningNine - teamOneInningNine;
+        int perfectInningsTwoNine = 0;
+
+        if (teamOneInningNine == 0 && inningDifferenceNineTeamTwo >= 1) {
+            perfectInningsTwoNine += 1;
+        }
+
+        int perfectInningsTotalTwoO = perfectInningsTwoOne + perfectInningsTwoTwo + perfectInningsTwoThree;
+        int perfectInningsTotalTwoT =  perfectInningsTwoFour + perfectInningsTwoFive + perfectInningsTwoSix;
+        int perfectInningsTotalTwoTh = perfectInningsTwoSeven + perfectInningsTwoEight + perfectInningsTwoNine;
+        int perfectInningsTotalTwo = perfectInningsTotalTwoO + perfectInningsTotalTwoT + perfectInningsTotalTwoTh;
+        System.out.print(teamTwo + " Perfect Innings: " + perfectInningsTotalTwo + "\n");
+    }
+}
